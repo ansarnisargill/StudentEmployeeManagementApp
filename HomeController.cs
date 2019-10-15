@@ -13,10 +13,10 @@ namespace SmukToolsApp
     [ApiController]
     public class HomeController : ControllerBase
     {
-        public ToolContext Context;
+        public Context Context;
 
         public HomeController(
-            ToolContext context)
+            Context context)
         {
             Context = context;
         }
@@ -25,16 +25,13 @@ namespace SmukToolsApp
         [HttpGet]
         public string Get()
         {
-            var events = Context.Bookings.ToList();
-            return JsonConvert.SerializeObject(events);
+
         }
 
 
         public string GetEvents()
         {
-            var events = Context.Bookings.ToList();
-            return JsonConvert.SerializeObject(events);
-            //return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        return "";
         }
 
         // GET: api/Home/5
