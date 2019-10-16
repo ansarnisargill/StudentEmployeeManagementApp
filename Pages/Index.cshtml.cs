@@ -14,13 +14,13 @@ namespace SmukToolsApp.Pages
     [Authorize]
     public class IndexModel : PageModel
     {
-    private ToolContext _context;
+    private Context _context;
 
         public void OnGet()
         {
 
         }
-        public IndexModel(ToolContext contex)
+        public IndexModel(Context contex)
         {
             _context=contex;
         }

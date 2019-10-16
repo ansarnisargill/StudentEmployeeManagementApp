@@ -34,7 +34,7 @@ namespace SmukToolsApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ToolContext>(options =>
+            services.AddDbContext<Context>(options =>
                 // options.UseSqlServer(
                 //     Configuration.GetConnectionString("SmukToolsAppContextConnection")));
                 options.UseInMemoryDatabase("MainDB"));
@@ -59,7 +59,6 @@ namespace SmukToolsApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseAuthentication();
             app.UseMvc();
         }
     }

@@ -23,7 +23,7 @@ namespace SmukToolsApp
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<ToolContext>();
+                    var context = services.GetRequiredService<Context>();
                     ToolInitializer.Initialize(context);
                 }
                 catch (Exception ex)
