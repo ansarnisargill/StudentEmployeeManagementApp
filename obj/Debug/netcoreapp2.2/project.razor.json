@@ -2981,6 +2981,31 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Pages\\Roles\\Edit.cshtml",
+      "TargetPath": "Pages\\Roles\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Employees\\Index.cshtml",
+      "TargetPath": "Pages\\Employees\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Roles\\Details.cshtml",
+      "TargetPath": "Pages\\Roles\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Employees\\Create.cshtml",
+      "TargetPath": "Pages\\Employees\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Employees\\Details.cshtml",
+      "TargetPath": "Pages\\Employees\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -2991,18 +3016,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Pages\\Employees\\Delete.cshtml",
+      "TargetPath": "Pages\\Employees\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Roles\\Index.cshtml",
+      "TargetPath": "Pages\\Roles\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Roles\\Delete.cshtml",
+      "TargetPath": "Pages\\Roles\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Pages\\Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages\\CRUDDemo.cshtml",
-      "TargetPath": "Pages\\CRUDDemo.cshtml",
+      "FilePath": "Pages\\JSDemo.cshtml",
+      "TargetPath": "Pages\\JSDemo.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Pages\\JSDemo.cshtml",
-      "TargetPath": "Pages\\JSDemo.cshtml",
+      "FilePath": "Pages\\Roles\\Create.cshtml",
+      "TargetPath": "Pages\\Roles\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3013,6 +3053,11 @@
     {
       "FilePath": "Pages\\Shared\\_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Pages\\Employees\\Edit.cshtml",
+      "TargetPath": "Pages\\Employees\\Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

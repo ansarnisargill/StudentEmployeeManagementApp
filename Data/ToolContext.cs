@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using StudentEmployeeManagementApp.Models;
 
 namespace SmukToolsApp.Data
@@ -16,6 +16,10 @@ namespace SmukToolsApp.Data
         {
             modelBuilder.Entity<Shift>().ToTable("Shifts");
         }
+
+        public DbSet<StudentEmployeeManagementApp.Models.EmployeeRole> EmployeeRole { get; set; }
+
+        public DbSet<StudentEmployeeManagementApp.Models.Employee> Employee { get; set; }
         
     }
 }
