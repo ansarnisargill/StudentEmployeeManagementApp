@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeShiftManagement", "EmployeeShiftManagement.csproj", "{F3FFBC0C-C7DC-4A64-B639-070177EADC0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3FFBC0C-C7DC-4A64-B639-070177EADC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3FFBC0C-C7DC-4A64-B639-070177EADC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3FFBC0C-C7DC-4A64-B639-070177EADC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3FFBC0C-C7DC-4A64-B639-070177EADC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E31F933-FBDF-48C7-86FB-D98F131C70D6}
+	EndGlobalSection
+EndGlobal

@@ -2,3 +2,15 @@ The system will be managed by a database that will contain the employee's detail
 the percentage of position stipulated in an employment contract, employee status (parent job, student, full-time position).
  With the help of the database it will be possible to produce reports of the number of embedded in shift / work day and compliance with the percentage. The manager's reports will be able to monitor the employees and see the focus of the output according to the amount of embedded and see if there was a subtraction and how the subtraction will affect the output of the focus.
 The employee submission process will be done via a WEB page that will display a weekly / monthly calendar and a table with the morning and evening shifts, the number of requests an employee can submit to 2-3 constraints per week (must be marked as priority for that morning / evening / vacation). For example, a student may submit 2 constraints a week and a full-time student may submit 3 constraints per week if the employee fulfills a constraint amount above the permitted limit, and will jump a message that exceeds the weekly constraint
+
+
+
+
+1. Percentage of Jobs - This is the amount of shifts an employee has to give per week.
+For example, a mother / student charges 50% of shifts.
+2. The number of employees who will be in each shift for example on a morning shift will work 3 employees and the evening shift will be 3 employees, and each employee will work according to what is in the contract
+For example: A student will work 3-4 times a week or a full-time employee will work 5 times a week.
+3. Forcing the amount of requests he can submit per week.
+For example, an employee can submit 2 applications a week for a day off / morning shift / evening shift.
+4. its the page i sent you (requesting page)
+5. The work arrangement is done during the inlay, which means that a day needs 6 employees, so you need to take care of 3 employees in the morning and 3 employees in the evening.
