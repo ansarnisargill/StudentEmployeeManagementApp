@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SmukToolsApp</title>
+    <title>@ViewData["Title"] </title>
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     </environment>
@@ -16,22 +16,16 @@
             integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href='~/fullCalendar/core/main.css' rel='stylesheet' />
-    <link href='~/fullCalendar/daygrid/main.css' rel='stylesheet' />
-    <link href='~/fullCalendar/timegrid/main.css' rel='stylesheet' />
-    <link href='~/fullCalendar/timeline/main.css' rel='stylesheet' />
-    <link href='~/fullCalendar/resource-timeline/main.css' rel='stylesheet' />
-    <script src='~/fullCalendar/core/main.js'></script>
-    <script src='~/fullCalendar/interaction/main.js'></script>
-    <script src='~/fullCalendar/daygrid/main.js'></script>
-    <script src='~/fullCalendar/timegrid/main.js'></script>
-    <script src='~/fullCalendar/timeline/main.js'></script>
-    <script src='~/fullCalendar/resource-common/main.js'></script>
-    <script src='~/fullCalendar/resource-timeline/main.js'></script>
+<!-- jsCalendar v1.4.3 Javascript and CSS from unpkg cdn -->
+<link rel="stylesheet" href="~/css/jsCalendar.min.css">
+<link rel="stylesheet" href="~/js/jsCalendar.darkseries.min.css">
+
+<script src="~/js/jsCalendar.min.js"></script>
+
 
 </head>
 
-<body >
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -48,11 +42,11 @@
             </div>
         </nav>
     </header>
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    
+    <partial name="_CookieConsentPartial" />
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">

@@ -11,7 +11,6 @@ using SmukToolsProject.Models;
 
 namespace SmukToolsApp.Pages
 {
-    [Authorize]
     public class IndexModel : PageModel
     {
     private Context _context;
