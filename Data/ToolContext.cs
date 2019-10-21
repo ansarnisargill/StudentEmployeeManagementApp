@@ -11,15 +11,16 @@ namespace SmukToolsApp.Data
         }
 
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<StudentEmployeeManagementApp.Models.EmployeeRole> EmployeeRoles { get; set; }
+
+        public DbSet<StudentEmployeeManagementApp.Models.Employee> Employees { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Shift>().ToTable("Shifts");
+           
         }
 
-        public DbSet<StudentEmployeeManagementApp.Models.EmployeeRole> EmployeeRole { get; set; }
 
-        public DbSet<StudentEmployeeManagementApp.Models.Employee> Employee { get; set; }
         
     }
 }

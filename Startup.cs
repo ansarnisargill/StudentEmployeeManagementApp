@@ -38,7 +38,10 @@ namespace SmukToolsApp
                 // options.UseSqlServer(
                 //     Configuration.GetConnectionString("SmukToolsAppContextConnection")));
                 options.UseInMemoryDatabase("MainDB"));
-
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+            services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -58,6 +61,7 @@ namespace SmukToolsApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseCookiePolicy();
             app.UseMvc();
         }

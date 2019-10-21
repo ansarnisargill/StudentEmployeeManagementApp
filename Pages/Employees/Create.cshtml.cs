@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +21,7 @@ namespace EmployeeShiftManagement.Pages.Employees
 
         public IActionResult OnGet()
         {
-        ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRole, "ID", "ID");
+        ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "ID");
             return Page();
         }
 
@@ -35,7 +35,7 @@ namespace EmployeeShiftManagement.Pages.Employees
                 return Page();
             }
 
-            _context.Employee.Add(Employee);
+            _context.Employees.Add(Employee);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

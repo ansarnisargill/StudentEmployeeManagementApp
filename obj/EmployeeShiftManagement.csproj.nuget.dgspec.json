@@ -1,28 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ansar\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj": {}
+    "C:\\Users\\it\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ansar\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj": {
+    "C:\\Users\\it\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ansar\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj",
+        "projectUniqueName": "C:\\Users\\it\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj",
         "projectName": "EmployeeShiftManagement",
-        "projectPath": "C:\\Users\\Ansar\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj",
-        "packagesPath": "C:\\Users\\Ansar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ansar\\Desktop\\StudentEmployeeManagementApp\\obj\\",
+        "projectPath": "C:\\Users\\it\\Desktop\\StudentEmployeeManagementApp\\EmployeeShiftManagement.csproj",
+        "packagesPath": "C:\\Users\\it\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\it\\Desktop\\StudentEmployeeManagementApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ansar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\it\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +78,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.2.4, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

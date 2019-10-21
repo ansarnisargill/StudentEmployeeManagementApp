@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,14 +30,14 @@ namespace EmployeeShiftManagement.Pages.Employees
                 return NotFound();
             }
 
-            Employee = await _context.Employee
+            Employee = await _context.Employees
                 .Include(e => e.EmployeeRole).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Employee == null)
             {
                 return NotFound();
             }
-           ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRole, "ID", "ID");
+           ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "ID");
             return Page();
         }
 
@@ -71,7 +71,7 @@ namespace EmployeeShiftManagement.Pages.Employees
 
         private bool EmployeeExists(int id)
         {
-            return _context.Employee.Any(e => e.ID == id);
+            return _context.Employees.Any(e => e.ID == id);
         }
     }
 }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,7 +34,7 @@ namespace EmployeeShiftManagement.Pages.Roles
                 return Page();
             }
 
-            _context.EmployeeRole.Add(EmployeeRole);
+            _context.EmployeeRoles.Add(EmployeeRole);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,7 +29,7 @@ namespace EmployeeShiftManagement.Pages.Roles
                 return NotFound();
             }
 
-            EmployeeRole = await _context.EmployeeRole.FirstOrDefaultAsync(m => m.ID == id);
+            EmployeeRole = await _context.EmployeeRoles.FirstOrDefaultAsync(m => m.ID == id);
 
             if (EmployeeRole == null)
             {
@@ -45,11 +45,11 @@ namespace EmployeeShiftManagement.Pages.Roles
                 return NotFound();
             }
 
-            EmployeeRole = await _context.EmployeeRole.FindAsync(id);
+            EmployeeRole = await _context.EmployeeRoles.FindAsync(id);
 
             if (EmployeeRole != null)
             {
-                _context.EmployeeRole.Remove(EmployeeRole);
+                _context.EmployeeRoles.Remove(EmployeeRole);
                 await _context.SaveChangesAsync();
             }
 

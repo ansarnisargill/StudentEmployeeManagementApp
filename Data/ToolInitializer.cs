@@ -21,6 +21,24 @@ namespace SmukToolsApp.Data
                 {
                     context.Shifts.Add(item);
                 }
+                var role = new EmployeeRole()
+                {
+                    Name = "Admin"
+                };
+                context.EmployeeRoles.Add(role);
+                context.SaveChanges();
+                var users = new Employee()
+                {
+                    EmployeeNo = "emp1",
+                    ContractStartingDate = DateTime.Now.AddDays(-30),
+                    ContractEndingDate = DateTime.Now.AddDays(30),
+                    EmployeeRoleId = context.EmployeeRoles.Select(x => x.ID).First(),
+                    FirstName = "Admin",
+                    LastName = "Admin",
+                    Password = "123",
+                    Username = "admin"
+                };
+                context.Employees.Add(users);
                 context.SaveChanges();
             }
         }

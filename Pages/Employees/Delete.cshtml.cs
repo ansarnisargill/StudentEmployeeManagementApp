@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,7 +29,7 @@ namespace EmployeeShiftManagement.Pages.Employees
                 return NotFound();
             }
 
-            Employee = await _context.Employee
+            Employee = await _context.Employees
                 .Include(e => e.EmployeeRole).FirstOrDefaultAsync(m => m.ID == id);
 
             if (Employee == null)
@@ -46,11 +46,11 @@ namespace EmployeeShiftManagement.Pages.Employees
                 return NotFound();
             }
 
-            Employee = await _context.Employee.FindAsync(id);
+            Employee = await _context.Employees.FindAsync(id);
 
             if (Employee != null)
             {
-                _context.Employee.Remove(Employee);
+                _context.Employees.Remove(Employee);
                 await _context.SaveChangesAsync();
             }
 

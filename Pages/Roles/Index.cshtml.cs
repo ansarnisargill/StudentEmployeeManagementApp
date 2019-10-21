@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,7 +23,7 @@ namespace EmployeeShiftManagement.Pages.Roles
 
         public async Task OnGetAsync()
         {
-            EmployeeRole = await _context.EmployeeRole.ToListAsync();
+            EmployeeRole = await _context.EmployeeRoles.ToListAsync();
         }
     }
 }

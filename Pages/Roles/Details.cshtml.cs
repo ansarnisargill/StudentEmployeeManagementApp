@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,7 +28,7 @@ namespace EmployeeShiftManagement.Pages.Roles
                 return NotFound();
             }
 
-            EmployeeRole = await _context.EmployeeRole.FirstOrDefaultAsync(m => m.ID == id);
+            EmployeeRole = await _context.EmployeeRoles.FirstOrDefaultAsync(m => m.ID == id);
 
             if (EmployeeRole == null)
             {
