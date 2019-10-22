@@ -17,17 +17,24 @@ namespace SmukToolsApp.Data
                 {
                     new Shift{  StartingTime=DateTime.Now,EndingTime=DateTime.Now.AddHours(3),IsMorningShift=true}
                 };
-                foreach (var item in tools)
+
+                context.Shifts.AddRange(tools);
+
+                var roles = new EmployeeRole[]
                 {
-                    context.Shifts.Add(item);
-                }
-                var role = new EmployeeRole()
+                    new EmployeeRole
                 {
                     Name = "Admin"
+                }
+                ,new EmployeeRole
+                {
+                     Name="Student"
+                }
                 };
-                context.EmployeeRoles.Add(role);
+                context.EmployeeRoles.AddRange(roles);
                 context.SaveChanges();
-                var users = new Employee()
+                var users = new Employee[] {
+                    new Employee()
                 {
                     EmployeeNo = "emp1",
                     ContractStartingDate = DateTime.Now.AddDays(-30),
@@ -37,8 +44,19 @@ namespace SmukToolsApp.Data
                     LastName = "Admin",
                     Password = "123",
                     Username = "admin"
-                };
-                context.Employees.Add(users);
+                },
+                                    new Employee()
+                {
+                    EmployeeNo = "emp2",
+                    ContractStartingDate = DateTime.Now.AddDays(-30),
+                    ContractEndingDate = DateTime.Now.AddDays(30),
+                    EmployeeRoleId = context.EmployeeRoles.Where(x=>x.Name=="Student").Select(x=>x.ID).First(),
+                    FirstName = "Student",
+                    LastName = "Student",
+                    Password = "123",
+                    Username = "student"
+                }};
+                context.Employees.AddRange(users);
                 context.SaveChanges();
             }
         }

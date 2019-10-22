@@ -20,6 +20,10 @@ namespace SmukToolsApp.Pages
         {
             if (HttpContext.Session.GetInt32("Id") != null)
             {
+                if (HttpContext.Session.GetString("Role") == "Admin")
+                {
+                    return RedirectToPage("/Admin");
+                }
                 return Page();
             }
             else

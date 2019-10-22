@@ -2,32 +2,42 @@
 @model EmployeeShiftManagement.Pages.EmployeesManagement.LoginModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Log In";
 }
 
-    <div class="card bg-white col-lg-6 offset-lg-3">
-        <div class="card-body">
-            <h2>Log In</h2>
-
-            <form method="post">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Employee.Username" class="control-label"></label>
-                    <input asp-for="Employee.Username" class="form-control" />
-                    <span asp-validation-for="Employee.Username" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Employee.Password" class="control-label"></label>
-                    <input asp-for="Employee.Password" type="password" class="form-control" />
-                    <span asp-validation-for="Employee.Password" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Log In" class="btn btn-outline-primary" />
-                </div>
-            </form>
+@{ if (Model.InvalidLogin)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Invalid Login!</strong> Username or password you entered is incorrect.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+    }
+}
+<div class="card bg-white col-lg-6 offset-lg-3">
+    <div class="card-body">
+        <h2>Log In</h2>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Employee.Username" class="control-label"></label>
+                <input asp-for="Employee.Username" class="form-control" />
+                <span asp-validation-for="Employee.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Password" class="control-label"></label>
+                <input asp-for="Employee.Password" type="password" class="form-control" />
+                <span asp-validation-for="Employee.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Log In" class="btn btn-outline-primary" />
+            </div>
+        </form>
     </div>
+</div>
 
 
 @section Scripts {

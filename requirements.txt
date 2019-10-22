@@ -1,7 +1,17 @@
 The system will be managed by a database that will contain the employee's details,
-the percentage of position stipulated in an employment contract, employee status (parent job, student, full-time position).
- With the help of the database it will be possible to produce reports of the number of embedded in shift / work day and compliance with the percentage. The manager's reports will be able to monitor the employees and see the focus of the output according to the amount of embedded and see if there was a subtraction and how the subtraction will affect the output of the focus.
-The employee submission process will be done via a WEB page that will display a weekly / monthly calendar and a table with the morning and evening shifts, the number of requests an employee can submit to 2-3 constraints per week (must be marked as priority for that morning / evening / vacation). For example, a student may submit 2 constraints a week and a full-time student may submit 3 constraints per week if the employee fulfills a constraint amount above the permitted limit, and will jump a message that exceeds the weekly constraint
+the percentage of position stipulated in an employment contract, employee status
+(parent job, student, full-time position).
+ With the help of the database it will be possible to produce reports of the number of
+ embedded in shift / work day and compliance with the percentage.
+ The manager's reports will be able to monitor the employees and see the focus of the output according
+ to the amount of embedded and see if there was a subtraction and
+ how the subtraction will affect the output of the focus.
+The employee submission process will be done via a WEB page that will display a weekly / monthly calendar
+and a table with the morning and evening shifts, the number of requests an employee can submit to 2-3 
+constraints per week (must be marked as priority for that morning / evening / vacation). 
+For example, a student may submit 2 constraints a week and a full-time student may submit 3 
+constraints per week if the employee fulfills a constraint amount above the permitted limit, 
+and will jump a message that exceeds the weekly constraint
 
 
 

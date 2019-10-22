@@ -1,0 +1,70 @@
+﻿@page "{status=1}"
+@model EmployeeShiftManagement.Pages.UserApplicationsModel
+@{
+    ViewData["Title"] = "UserApplications";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@{ if (Model.ShowSuccessMessage)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Your Application has been submitted.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    if (Model.ShowRejectMessage)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Already Applied!</strong> You have already applied for this shift.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+}
+
+<div class="card bg-white p-4">
+    @{
+        HttpContext.Session.TryGetValue("Name", out byte[] role);
+        string result = System.Text.Encoding.UTF8.GetString(role);
+    }
+    <h1>@result's Applications </h1>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShiftApplications[0].Shift.StartingTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShiftApplications[0].Shift.EndingTime)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ShiftApplications)
+            {
+                <tr>
+                    <td>
+                        @{var type = item.Shift.IsMorningShift ? "Morning Shift" : "Evening Shift"; }
+                        @type
+
+                    </td>
+                    <td>
+                        @item.Shift.StartingTime.ToString("dd/MM/yyyy hh:mm")
+                    </td>
+                    <td>
+                        @item.Shift.EndingTime.ToString("dd/MM/yyyy hh:mm")
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -23,7 +23,7 @@ namespace EmployeeShiftManagement.Pages.EmployeesManagement
 
         [BindProperty]
         public Employee Employee { get; set; } = new Employee();
-
+        public bool InvalidLogin { get; set; } = false;
         public async Task<IActionResult> OnGetAsync()
         {
            ViewData["EmployeeRoleId"] = new SelectList(await _context.EmployeeRoles.ToListAsync(), "ID", "Name");
@@ -33,14 +33,24 @@ namespace EmployeeShiftManagement.Pages.EmployeesManagement
         public async Task<IActionResult> OnPostAsync()
         {
 
-            var user =await _context.Employees.Where(x => x.Username == this.Employee.Username && x.Password == this.Employee.Password).FirstOrDefaultAsync();
+            var user =await _context.Employees.Include(x=>x.EmployeeRole).Where(x => x.Username == this.Employee.Username && x.Password == this.Employee.Password).FirstOrDefaultAsync();
             if (user != null)
             {
                 HttpContext.Session.SetInt32("Id", user.ID);
-                return RedirectToPage("/Index");
+                HttpContext.Session.SetString("Role", user.EmployeeRole.Name);
+                HttpContext.Session.SetString("Name", user.FirstName);
+                if (user.EmployeeRole.Name == "Admin")
+                {
+                    return RedirectToPage("/Admin");
+                }
+                else
+                {
+                    return RedirectToPage("/Index");
+                }
             }
             else
             {
+                this.InvalidLogin = true;
                 ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "Name");
                 return Page();
             }

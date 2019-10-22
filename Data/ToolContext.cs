@@ -14,6 +14,8 @@ namespace SmukToolsApp.Data
         public DbSet<StudentEmployeeManagementApp.Models.EmployeeRole> EmployeeRoles { get; set; }
 
         public DbSet<StudentEmployeeManagementApp.Models.Employee> Employees { get; set; }
+        public DbSet<EmployeeShiftManagement.Models.ShiftApplications> ShiftApplications { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

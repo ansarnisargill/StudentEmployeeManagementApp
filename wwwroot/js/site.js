@@ -42,17 +42,20 @@ function ShowModal(source,date) {
     $('#exampleModalLabel').append(`Shifts for ${date.toDateString()} `);
     let Content = ``;
 
-    Content = Content + `<table class="table table-bordered table-dark table-hover" style = "width:100%;" > <thead><tr><th>Shift Start</th><th>Shift End</th><th>Type</th><th></th></tr></thead>`;
+    Content = Content + `<table class="table table-bordered table-hover" style = "width:100%;" > <thead><tr><th>Shift Start</th><th>Shift End</th><th>Type</th><th></th></tr></thead>`;
     for (let s of source) {
         let startDate = new Date(Date.parse(s.startingTime));
         let endDate = new Date(Date.parse(s.endingTime));
         let Type = s.isMorningShift ? "Morning" : "Evening";
         console.log(s);
         Content = Content + `<tr><td>${startDate.format('hh:MM')
-            }</td > <td>${endDate.format('hh:MM')}</td><td>${Type}</td><td><button class="btn btn-outline-primary">Select </button></td></tr>`;
+            }</td > <td>${endDate.format('hh:MM')}</td><td>${Type}</td><td><button onclick="SubmitApplication(${s.id})" class="btn btn-sm btn-outline-primary">Apply </button></td></tr>`;
     }
     Content = Content + `</table >`;
     $('#modelBody').empty();
     $('#modelBody').append(Content);
     $('#exampleModal').modal();
+}
+function SubmitApplication(ShiftId) {
+    window.location.href = `/ShiftApplication/Index?ShiftId=${ShiftId}`;
 }
