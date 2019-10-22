@@ -24,8 +24,12 @@ namespace EmployeeShiftManagement.Pages
         public bool ShowSuccessMessage { get; set; } = false;
         public IList<ShiftApplications> ShiftApplications { get;set; }
 
-        public async Task OnGetAsync(int status)
+        public async Task<IActionResult> OnGetAsync(int status)
         {
+            if (HttpContext.Session.GetInt32("Id") == null)
+            {
+                return Redirect("/UserAuth/Login");
+            }
             if (status == 2)
             {
                 this.ShowSuccessMessage = true;
@@ -38,6 +42,7 @@ namespace EmployeeShiftManagement.Pages
             ShiftApplications = await _context.ShiftApplications
                 .Include(s => s.Employee)
                 .Include(s => s.Shift).Where(x=>x.EmployeeID==userId).ToListAsync();
+            return Page();
         }
     }
 }

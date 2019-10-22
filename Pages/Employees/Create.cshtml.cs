@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,7 +22,11 @@ namespace EmployeeShiftManagement.Pages.Employees
 
         public IActionResult OnGet()
         {
-        ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "ID");
+            if (HttpContext.Session.GetInt32("Id") == null)
+            {
+                return Redirect("/UserAuth/Login");
+            }
+            ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "Name");
             return Page();
         }
 

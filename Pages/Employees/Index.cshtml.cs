@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -21,10 +22,15 @@ namespace EmployeeShiftManagement.Pages.Employees
 
         public IList<Employee> Employee { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
+            if (HttpContext.Session.GetInt32("Id") == null)
+            {
+                return Redirect("/UserAuth/Login");
+            }
             Employee = await _context.Employees
                 .Include(e => e.EmployeeRole).ToListAsync();
+            return Page();
         }
     }
 }
