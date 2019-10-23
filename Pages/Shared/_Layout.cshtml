@@ -36,20 +36,22 @@
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse">
 
 
 
 
-                    @{
-                        byte[] check;
-                        Context.Session.TryGetValue("Id", out check);
-                        if (check != null)
+
+                @{
+                    byte[] check;
+                    Context.Session.TryGetValue("Id", out check);
+                    if (check != null)
+                    {
+
+                        Context.Session.TryGetValue("Role", out byte[] role);
+                        string result = System.Text.Encoding.UTF8.GetString(role);
+                        if (result == "Admin")
                         {
-                            Context.Session.TryGetValue("Role", out byte[] role);
-                            string result = System.Text.Encoding.UTF8.GetString(role);
-                            if (result == "Admin")
-                            {
+                            <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
                                         <a class="nav-link" href="/Employees/Index">Employees</a>
@@ -58,23 +60,27 @@
                                         <a class="nav-link" href="/Roles/Index">Roles</a>
                                     </li>
                                 </ul>
-                            }
-                            else
-                            {
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
                                         <a class="nav-link" href="/UserApplications">User Applications</a>
                                     </li>
                                 </ul>
-                            }
+                            </div>
                         }
+                        <a href="/UserAuth/Logout" class="btn btn-outline-success float-right">Log Out</a>
+
                     }
+                }
 
 
 
 
-                </div>
-                <a href="/UserAuth/Logout" class="btn btn-outline-success float-right">Log Out</a>
+
 
             </div>
         </nav>
