@@ -93,3 +93,12 @@ C:\Users\it\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\P
 C:\Users\it\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Details.cshtml.g.cs
 C:\Users\it\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Edit.cshtml.g.cs
 C:\Users\it\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Index.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Admin.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Create.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Delete.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Details.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Edit.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\Shifts\Index.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\UserApplications.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\UserAuth\Login.cshtml.g.cs
+C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\UserAuth\Logout.cshtml.g.cs
