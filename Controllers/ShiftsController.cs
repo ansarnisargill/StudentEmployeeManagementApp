@@ -33,7 +33,7 @@ namespace EmployeeShiftManagement.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Shift>>> GetShift(string id)
         {
-            var date = DateTime.Parse(id).AddDays(1);
+            DateTime date = DateTime.ParseExact(id, "dd-MM-yyyy", null);
             CreateShifts(date);
             var shifts = await _context.Shifts.Where(x => x.Date.Date == date.Date).ToListAsync();
 
@@ -48,7 +48,7 @@ namespace EmployeeShiftManagement.Controllers
                 {
                     new Shift{  StartingTime=new TimeSpan(8,0,0),EndingTime=new TimeSpan(16,0,0),IsMorningShift=true,Date=date.Date}
                     ,
-                   new Shift{  StartingTime=new TimeSpan(16,0,0),EndingTime=new TimeSpan(20,0,0),IsMorningShift=false,Date=date.Date}              
+                   new Shift{  StartingTime=new TimeSpan(16,0,0),EndingTime=new TimeSpan(22,0,0),IsMorningShift=false,Date=date.Date}              
                 };
                 _context.Shifts.AddRange(shifts);
                 _context.SaveChanges();

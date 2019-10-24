@@ -31,10 +31,14 @@
         string result = System.Text.Encoding.UTF8.GetString(role);
     }
     <h1>@result's Applications </h1>
+    <button class="btn btn-outline-dark btn-sm col-1" onclick="ExportApplications()" >Export</button>
     <br />
-    <table class="table">
+    <table class="table" id="ApplicationsTable">
         <thead>
             <tr>
+                <th>
+                    Date
+                </th>
                 <th>
                     Type
                 </th>
@@ -50,20 +54,25 @@
         <tbody>
             @foreach (var item in Model.ShiftApplications)
             {
-                <tr>
-                    <td>
-                        @{var type = item.Shift.IsMorningShift ? "Morning Shift" : "Evening Shift"; }
-                        @type
 
-                    </td>
-                    <td>
-                        @item.Shift.StartingTime.ToString("dd/MM/yyyy hh:mm")
-                    </td>
-                    <td>
-                        @item.Shift.EndingTime.ToString("dd/MM/yyyy hh:mm")
-                    </td>
+            <tr>
+                <td>
+                    @item.Shift.Date.ToString("dd/MM/yyyy")
 
-                </tr>
+                </td>
+                <td>
+                    @{var type = item.Shift.IsMorningShift ? "Morning Shift" : "Evening Shift"; }
+                    @type
+
+                </td>
+                <td>
+                    @item.Shift.StartingTime
+                </td>
+                <td>
+                    @item.Shift.EndingTime
+                </td>
+
+            </tr>
             }
         </tbody>
     </table>

@@ -1,5 +1,5 @@
-﻿function Load(){
-    new HelloWeek({
+﻿function Load() {
+    var calendar = new HelloWeek({
         selector: '.hello-week',
         lang: 'en',
         langFolder: './dist/langs/',
@@ -9,7 +9,7 @@
         multiplePick: false,
         defaultDate: null,
         todayHighlight: true,
-        disablePastDays: false,
+        disablePastDays: true,
         disabledDaysOfWeek: null,
         disableDates: null,
         weekStart: 0, // week start on Sunday
@@ -18,28 +18,25 @@
         range: false,
         rtl: false,
         locked: false,
-        minDate: null,
-        maxDate: null,
+        minDate: new Date(),
+        maxDate: new Date(Date.now() + 12096e5),
         nav: ['◀', '▶'],
-        onLoad: updateInfo,
-        onChange: updateInfo,
-        onSelect: updateInfo
+        onSelect: () => {
+            updateInfo(
+                calendar.getDays()[0]
+            );
+        }
     });
 }
-function updateInfo() {
-    if (this.today) {
-        console.log(this.today);
-    }
+function updateInfo(SelectedDate) {
+    SelectedDate = SelectedDate.replace(new RegExp('/', 'g'), '-');
+    fetch(`/api/Shifts/${SelectedDate}`).then(res => res.json()).then(res => ShowModal(res, SelectedDate));
 
-    if (this.lastSelectedDay) {
-        var date = new Date(this.lastSelectedDay);
-        fetch(`/api/Shifts/${date.toISOString()}`).then(res =>  res.json()).then(res => ShowModal(res,date));
-    }
 }
 
-function ShowModal(source,date) {
+function ShowModal(source, date) {
     $('#exampleModalLabel').empty();
-    $('#exampleModalLabel').append(`Shifts for ${date.toDateString()} `);
+    $('#exampleModalLabel').append(`Shifts for ${date} `);
     let Content = ``;
     console.log(source);
 
@@ -56,4 +53,7 @@ function ShowModal(source,date) {
 }
 function SubmitApplication(ShiftId) {
     window.location.href = `/ShiftApplication/Index?ShiftId=${ShiftId}`;
+}
+function ExportApplications() {
+    TableToExcel.convert(document.getElementById("ApplicationsTable"));
 }

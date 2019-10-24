@@ -25,15 +25,15 @@ namespace EmployeeShiftManagement.Pages.EmployeesManagement
         public bool InvalidLogin { get; set; } = false;
         public IActionResult OnGetAsync()
         {
+            if (HttpContext.Session.GetInt32("Id") != null)
+            {
+                return RedirectToPage("/Index");
+            }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (HttpContext.Session.GetInt32("Id") != null)
-            {
-                return RedirectToPage("/Index");
-            }
             var user =await _context.Employees.Include(x=>x.EmployeeRole).Where(x => x.Username == this.Employee.Username && x.Password == this.Employee.Password).FirstOrDefaultAsync();
             if (user != null)
             {
