@@ -2,6 +2,8 @@ using System;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using EmployeeShiftManagement.Models;
+using System.Collections.Generic;
 
 namespace StudentEmployeeManagementApp.Models
 {
@@ -32,6 +34,8 @@ namespace StudentEmployeeManagementApp.Models
         public DateTime ContractEndingDate { get; set; }
         public int EmployeeRoleId { get; set; }
         public EmployeeRole EmployeeRole { get; set; }
+        public List<ShiftApplications> ShiftsApplications { get; set; }
+
 
     }
     public class EmployeeRole

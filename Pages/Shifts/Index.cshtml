@@ -5,59 +5,46 @@
     ViewData["Title"] = "Shifts";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<div class="card bg-white p-4 ">
-    <h1>List Of Shifts</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].StartingTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].EndingTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].IsMorningShift)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].MinimumRequirement)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Shift[0].MaximumRequirement)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Shift)
-            {
+    <div class="card bg-white p-4 ">
+        <h1>List Of Shifts</h1>
+        <p><button onclick="ExportShiftsAll()" class="btn m-1 btn-sm btn-outline-dark">Export</button></p>
+        <table class="table" id="AllShifts">
+            <thead>
                 <tr>
-                                        <td>
-                        @item.Date.ToString("dd/MM/yyyy")
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StartingTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EndingTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsMorningShift)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MinimumRequirement)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MaximumRequirement)
-                    </td>
-                    <td>
-                        <a asp-page="./Details" class="btn btn-sm btn-outline-dark" asp-route-id="@item.ID">Details</a>
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shift[0].Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shift[0].StartingTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shift[0].EndingTime)
+                    </th>
+
+
+
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Shift)
+                {
+                    <tr>
+                        <td>
+                            @item.Date.ToString("dd/MM/yyyy")
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartingTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndingTime)
+                        </td>
+
+                        <td>
+                            <a asp-page="./Details" class="btn btn-sm btn-outline-dark" asp-route-id="@item.ID">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

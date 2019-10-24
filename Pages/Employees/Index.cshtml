@@ -9,9 +9,11 @@
         <h1>List Of Employees</h1>
 
         <p>
-            <a asp-page="Create">Create New</a>
+            <a class="btn btn-sm btn-outline-primary" asp-page="Create">Create New</a>
+            <button onclick="ExportEmployees()" class="btn btn-sm btn-outline-dark">Export</button>
         </p>
-        <table class="table">
+        
+        <table class="table" id="AllEmployees">
             <thead>
                 <tr>
                     <th>

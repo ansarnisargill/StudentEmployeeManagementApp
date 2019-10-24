@@ -60,3 +60,9 @@ function ExportApplications() {
 function ExportApplicationsAdmin() {
     TableToExcel.convert(document.getElementById("ApplicationsTableAdmin"));
 }
+function ExportEmployees() {
+    TableToExcel.convert(document.getElementById("AllEmployees"));
+}
+function ExportShiftsAll() {
+    TableToExcel.convert(document.getElementById("AllShifts"));
+}

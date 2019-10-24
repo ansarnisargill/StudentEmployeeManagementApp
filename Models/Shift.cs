@@ -1,4 +1,6 @@
+using EmployeeShiftManagement.Models;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace StudentEmployeeManagementApp.Models
@@ -25,5 +27,6 @@ namespace StudentEmployeeManagementApp.Models
         public int MaximumRequirement { get; set; }
         [Display(Name = "Shift Date")]
         public DateTime Date { get; set; }
+        public List<ShiftApplications> ShiftsApplications { get; set; }
     }
 }
