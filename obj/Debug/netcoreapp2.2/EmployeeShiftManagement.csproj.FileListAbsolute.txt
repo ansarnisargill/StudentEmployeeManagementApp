@@ -99,3 +99,4 @@ C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Empl
 C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\EmployeeShiftManagement.dll
 C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\EmployeeShiftManagement.pdb
 C:\Users\Ansar\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\EmployeeShiftManagement.csproj.CopyComplete
+C:\Users\it\Desktop\StudentEmployeeManagementApp\obj\Debug\netcoreapp2.2\Razor\Pages\AdminUserShiftsReport.cshtml.g.cs

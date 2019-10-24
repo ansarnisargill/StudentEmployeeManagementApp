@@ -42,7 +42,7 @@ namespace EmployeeShiftManagement.Pages.Employees
             {
                 return NotFound();
             }
-           ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "ID");
+           ViewData["EmployeeRoleId"] = new SelectList(_context.EmployeeRoles, "ID", "Name");
             return Page();
         }
 

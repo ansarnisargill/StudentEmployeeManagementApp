@@ -57,3 +57,6 @@ function SubmitApplication(ShiftId) {
 function ExportApplications() {
     TableToExcel.convert(document.getElementById("ApplicationsTable"));
 }
+function ExportApplicationsAdmin() {
+    TableToExcel.convert(document.getElementById("ApplicationsTableAdmin"));
+}
