@@ -28,7 +28,7 @@ namespace EmployeeShiftManagement.Pages.Shifts
             {
                 return Redirect("/UserAuth/Login");
             }
-            Shift = await _context.Shifts.ToListAsync();
+            Shift = await _context.Shifts.OrderByDescending(x=>x.Date).ToListAsync();
             return Page();
         }
     }

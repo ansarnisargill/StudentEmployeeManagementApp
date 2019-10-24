@@ -10,10 +10,10 @@ namespace StudentEmployeeManagementApp.Models
         public int ID { get; set; }
         [Display(Name = "Shift Start")]
         [Required]
-        public DateTime StartingTime { get; set; }
+        public TimeSpan StartingTime { get; set; }
         [Display(Name = "Shift End")]
         [Required]
-        public DateTime EndingTime { get; set; }
+        public TimeSpan EndingTime { get; set; }
         [Display(Name = "Is Morning Shift?")]
         [Required]
         public bool IsMorningShift { get; set; }
@@ -23,6 +23,7 @@ namespace StudentEmployeeManagementApp.Models
         [Display(Name = "Max Requirement")]
         [Required]
         public int MaximumRequirement { get; set; }
-
+        [Display(Name = "Shift Date")]
+        public DateTime Date { get; set; }
     }
 }

@@ -41,15 +41,13 @@ function ShowModal(source,date) {
     $('#exampleModalLabel').empty();
     $('#exampleModalLabel').append(`Shifts for ${date.toDateString()} `);
     let Content = ``;
+    console.log(source);
 
     Content = Content + `<table class="table table-bordered table-hover" style = "width:100%;" > <thead><tr><th>Shift Start</th><th>Shift End</th><th>Type</th><th></th></tr></thead>`;
     for (let s of source) {
-        let startDate = new Date(Date.parse(s.startingTime));
-        let endDate = new Date(Date.parse(s.endingTime));
         let Type = s.isMorningShift ? "Morning" : "Evening";
-        console.log(s);
-        Content = Content + `<tr><td>${startDate.format('hh:MM')
-            }</td > <td>${endDate.format('hh:MM')}</td><td>${Type}</td><td><button onclick="SubmitApplication(${s.id})" class="btn btn-sm btn-outline-primary">Apply </button></td></tr>`;
+        Content = Content + `<tr><td>${s.startingTime
+            }</td > <td>${s.endingTime}</td><td>${Type}</td><td><button onclick="SubmitApplication(${s.id})" class="btn btn-sm btn-outline-primary">Apply </button></td></tr>`;
     }
     Content = Content + `</table >`;
     $('#modelBody').empty();

@@ -11,14 +11,9 @@ namespace SmukToolsApp.Data
         {
             context.Database.EnsureCreated();
 
-            if (!context.Shifts.Any())
-            {
-                var tools = new Shift[]
-                {
-                    new Shift{  StartingTime=DateTime.Now,EndingTime=DateTime.Now.AddHours(3),IsMorningShift=true}
-                };
 
-                context.Shifts.AddRange(tools);
+            if (!context.EmployeeRoles.Any())
+            {
 
                 var roles = new EmployeeRole[]
                 {
@@ -33,6 +28,9 @@ namespace SmukToolsApp.Data
                 };
                 context.EmployeeRoles.AddRange(roles);
                 context.SaveChanges();
+            }
+            if (!context.Employees.Any())
+            {
                 var users = new Employee[] {
                     new Employee()
                 {

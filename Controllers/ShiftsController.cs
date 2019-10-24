@@ -33,12 +33,27 @@ namespace EmployeeShiftManagement.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Shift>>> GetShift(string id)
         {
-            var date = DateTime.Parse(id);
-            var shifts = await _context.Shifts.Where(x=>x.StartingTime.Date==date.Date).ToListAsync();
+            var date = DateTime.Parse(id).AddDays(1);
+            CreateShifts(date);
+            var shifts = await _context.Shifts.Where(x => x.Date.Date == date.Date).ToListAsync();
 
             return shifts;
         }
-
+        public void CreateShifts(DateTime date)
+        {
+            if (!_context.Shifts.Any(x => x.Date.Date == date.Date))
+            {
+                var StartingTime = date.Date.AddHours(8);
+                var shifts = new Shift[]
+                {
+                    new Shift{  StartingTime=new TimeSpan(8,0,0),EndingTime=new TimeSpan(16,0,0),IsMorningShift=true,Date=date.Date}
+                    ,
+                   new Shift{  StartingTime=new TimeSpan(16,0,0),EndingTime=new TimeSpan(20,0,0),IsMorningShift=false,Date=date.Date}              
+                };
+                _context.Shifts.AddRange(shifts);
+                _context.SaveChanges();
+            }
+        }
         // PUT: api/Shifts/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutShift(int id, Shift shift)

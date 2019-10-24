@@ -23,7 +23,7 @@ namespace EmployeeShiftManagement.Pages.EmployeesManagement
         [BindProperty]
         public Employee Employee { get; set; } = new Employee();
         public bool InvalidLogin { get; set; } = false;
-        public async Task<IActionResult> OnGetAsync()
+        public IActionResult OnGetAsync()
         {
             return Page();
         }
