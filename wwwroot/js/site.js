@@ -66,3 +66,7 @@ function ExportEmployees() {
 function ExportShiftsAll() {
     TableToExcel.convert(document.getElementById("AllShifts"));
 }
+function EmployeeWorkAdmin(){
+    TableToExcel.convert(document.getElementById("EmployeeWorkAdmin"));
+
+}

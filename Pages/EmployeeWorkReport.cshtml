@@ -1,0 +1,87 @@
+﻿@page
+@model EmployeeShiftManagement.Pages.EmployeeWorkReportModel
+
+@{
+ViewData["Title"] = "AdminUserShiftsReport";
+Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Employee Work Report</h1>
+<form method="post" class="form-inline mt-3">
+    <div class="form-group">
+        <label class="control-label" asp-for="From">From: </label>
+        <input type="date" asp-for="From" class="form-control ml-1">
+    </div>
+    <div class="form-group">
+        <label class="control-label ml-2" asp-for="To">To: </label>
+        <input type="date" asp-for="To" class="form-control ml-1">
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployeesID" class="control-label ml-2">Employee: </label>
+        <select asp-for="EmployeesID" class="form-control ml-1" asp-items="ViewBag.Employees"></select>
+    </div>
+    <input type="submit" class="btn btn-outline-dark ml-3" value="Show" />
+</form>
+<br />
+<div class="card bg-white p-4 ">
+    @if (Model.ShiftApplications != null)
+    {
+    <button class="btn btn-outline-dark btn-sm col-1" onclick="EmployeeWorkAdmin()">Export</button>
+    <br />
+    <table class="table" id="EmployeeWorkAdmin">
+        <thead>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Start
+                </th>
+                <th>
+                    End
+                </th>
+                <th>
+                    Employees
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ShiftApplications)
+            {
+            
+
+            <tr>
+                <td>
+                    @item.Date.ToString("dd/MM/yyyy")
+
+                </td>
+                <td>
+
+                    @{var type = item.IsMorningShift ? "Morning Shift" : "Evening Shift"; }
+                    @type
+
+                </td>
+                <td>
+                    @item.StartTime
+                </td>
+                <td>
+                    @item.EndTime
+                </td>
+                <td>
+                    @{
+                    var names="";
+                    foreach(var emp in item.Employees){
+                    names+=emp.Name+", ";
+                    }
+                    }
+                    @names
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    }
+</div>
